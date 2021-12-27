@@ -1,1 +1,166 @@
-Resume will go here.
+<!DOCTYPE html>
+<html lang="en">
+<title>Alek's Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="/spell-list-optimizer" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Spell List Optimizer</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
+    <a href="/resume" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resume</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="/spell-list-optimizer" class="w3-bar-item w3-button w3-padding-large">Spell List Optimizer</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="/resume" class="w3-bar-item w3-button w3-padding-large">Resume</a>
+  </div>
+</div>
+
+<!-- Header -->
+<!--<header class="w3-container w3-red w3-center" style="padding:128px 16px">-->
+<!--  <h1 class="w3-margin w3-jumbo">Alek's Demo Home</h1>-->
+<!--  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>-->
+<!--</header>-->
+
+<div class="w3-row-padding w3-padding-64 w3-container w3-content">
+  <h1>Resume:</h1>
+  <button type="button" class="collapsible">Education</button>
+  <div class="content">
+    <h4 style="color: firebrick">Bachelor of Science in Computer Science - GPA: 3.7</h4>
+    <h6>University of Washington, Seattle - Dean's List 4x</h6>
+    <p></p>
+
+  </div>
+  <button type="button" class="collapsible">Experience</button>
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <button type="button" class="collapsible">Misc</button>
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+<!-- First Grid -->
+<!--<div class="w3-row-padding w3-padding-64 w3-container w3-content">-->
+<!-- <p class="w3-opacity"><b>Today</b></p>-->
+<!-- <div class="w3-panel w3-white w3-card w3-display-container">-->
+<!--    <span class="w3-display-topright w3-padding w3-hover-red">X</span>-->
+<!--   <p class="w3-text-blue"><b>email.zip</b></p>-->
+<!--   <p>https://www.w3schools.com/lib/email.zip</p>-->
+<!--   <p class="w3-text-blue">Show in folder</p>-->
+<!-- </div>-->
+
+<!-- <p class="w3-opacity"><b>Yesterday</b></p>-->
+<!-- <div class="w3-panel w3-white w3-card w3-display-container">-->
+<!--   <span class="w3-display-topright w3-padding w3-hover-red">X</span>-->
+<!--   <p class="w3-text-blue"><b>email.zip</b></p>-->
+<!--   <p>https://www.w3schools.com/lib/email.zip</p>-->
+<!--   <p class="w3-text-blue">Show in folder</p>-->
+<!-- </div>-->
+
+<!-- <div class="w3-panel w3-white w3-card w3-display-container">-->
+<!--   <span class="w3-display-topright w3-padding w3-hover-red">X</span>-->
+<!--   <p class="w3-text-blue"><b>email.zip</b></p>-->
+<!--   <p>https://www.w3schools.com/lib/email.zip</p>-->
+<!--   <p class="w3-text-blue">Show in folder</p>-->
+<!-- </div>-->
+<!--</div>-->
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Thanks for visiting! See you soon!</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <a class="fa fa-facebook-official w3-hover-opacity" href="https://www.facebook.com"></a>
+    <a class="fa fa-instagram w3-hover-opacity" href="https://www.instagram.com"></a>
+    <a class="fa fa-snapchat w3-hover-opacity" href="https://www.snapchat.com"></a>
+    <a class="fa fa-pinterest-p w3-hover-opacity" href="https://www.pinterest.com"></a>
+    <a class="fa fa-twitter w3-hover-opacity" href="https://www.twitter.com"></a>
+    <a class="fa fa-linkedin w3-hover-opacity" href="https://www.linkedin.com/in/alekmilovanovic/"></a>
+ </div>
+</footer>
+
+<script>
+function showHide() {
+  var x = document.getElementById("Demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
