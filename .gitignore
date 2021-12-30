@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# .idea
+# My stuff
 .idea
+node_modules
+package-lock.json
+resume/index_hidden.html

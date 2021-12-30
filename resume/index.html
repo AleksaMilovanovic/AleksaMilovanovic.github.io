@@ -1,214 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Alek's Home</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
-
-.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color: #555;
-}
-
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-}
-</style>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div id="1"></div>
+    <div id="2"></div>
+    <input type="password" id="password">
+    <button class="decrypt">Decrypt site by providing password</button>
+    <script>
+        let encryptedData;
+        async function fetchData() {
+            let encrypted = null;
+            const resp = await fetch('cyphertext.txt')
+              .then(response => response.text())
+              .then(text => encrypted = text);
+            return encrypted;
+        }
+        fetchData().then(encrypted => encryptedData = encrypted);
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="/spell-list-optimizer" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Spell List Optimizer</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
-    <a href="/resume" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resume</a>
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="/spell-list-optimizer" class="w3-bar-item w3-button w3-padding-large">Spell List Optimizer</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-    <a href="/resume" class="w3-bar-item w3-button w3-padding-large">Resume</a>
-  </div>
-</div>
-
-<!-- Header -->
-<!--<header class="w3-container w3-red w3-center" style="padding:128px 16px">-->
-<!--  <h1 class="w3-margin w3-jumbo">Alek's Demo Home</h1>-->
-<!--  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>-->
-<!--</header>-->
-
-<div class="w3-row-padding w3-padding-64 w3-container w3-content">
-  <h2>Aleksa Milovanovic</h2>
-
-  <button type="button" class="collapsible">Personal Details</button>
-  <div class="content">
-    Fill in later - first remove links to resume...
-  </div>
-
-  <button type="button" class="collapsible">Education</button>
-  <div class="content">
-    <h4 style="color: firebrick">Bachelor of Science in Computer Science - GPA: 3.7</h4>
-    <h6>University of Washington, Seattle - Dean's List 4x</h6>
-  </div>
-
-  <button type="button" class="collapsible">Experience</button>
-  <div class="content">
-    <button type="button" class="collapsible">F5 Networks | June 2019 - Present</button>
-    <div class="content">
-      <button type="button" class="collapsible">Software Engineer | July 2021 - Present</button>
-      <div class="content">
-        <h4>DevOps Engineer</h4>
-        <h6>Duties include:</h6>
-        <ul>
-          <li>Maintaining critical database to operations</li>
-          <li>Adding features to internal tools to optimize accessibility</li>
-          <li>Running performance tests to ensure new builds match standards of each release</li>
-          <li>Communicating with other teams to unify vision of tool for users and developers</li>
-          <li>Fixing bugs found in existing codebase</li>
-          <li>Updating over 300 pages of documentation for readability and upkeep</li>
-        </ul>
-        <h8>
-          Spends time making operations as smooth as possible, allowing production-focused developers to
-          devote themselves to solving problems critical to user instead of creating development environments
-          or figuring out how to acquire data.
-        </h8>
-        <p></p>
-      </div>
-      <button type="button" class="collapsible">Software Engineer Intern | June 2020 - Sep. 2020</button>
-      <div class="content">
-        <h4>Information here.</h4>
-      </div>
-      <button type="button" class="collapsible">Software Engineer Intern | June 2019 - Sep. 2019</button>
-      <div class="content">
-        <h4>Information here.</h4>
-      </div>
-    </div>
-  </div>
-
-  <button type="button" class="collapsible">Misc</button>
-  <div class="content">
-      <button type="button" class="collapsible">Open Source Projects</button>
-      <div class="content">
-        <h4>Information here.</h4>
-      </div>
-
-      <button type="button" class="collapsible">Leadership and Awards</button>
-      <div class="content">
-        <h6>Boy Scouts of America - Eagle Scout, Senior Patrol Leader, Order of the Arrow</h6>
-        <h6>Philosophy of Medicine - Vice President, Co-founder</h6>
-        <h6>Interact Club - President, Treasurer</h6>
-        <h6>DECA Internationals - 5th place, 2018</h6>
-      </div>
-  </div>
-</div>
-
-<a href="/resume/Alek%20Resume%2012-9.pdf">Click here to download resume!</a>
-
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
-
-<!-- First Grid -->
-<!--<div class="w3-row-padding w3-padding-64 w3-container w3-content">-->
-<!-- <p class="w3-opacity"><b>Today</b></p>-->
-<!-- <div class="w3-panel w3-white w3-card w3-display-container">-->
-<!--    <span class="w3-display-topright w3-padding w3-hover-red">X</span>-->
-<!--   <p class="w3-text-blue"><b>email.zip</b></p>-->
-<!--   <p>https://www.w3schools.com/lib/email.zip</p>-->
-<!--   <p class="w3-text-blue">Show in folder</p>-->
-<!-- </div>-->
-
-<!-- <p class="w3-opacity"><b>Yesterday</b></p>-->
-<!-- <div class="w3-panel w3-white w3-card w3-display-container">-->
-<!--   <span class="w3-display-topright w3-padding w3-hover-red">X</span>-->
-<!--   <p class="w3-text-blue"><b>email.zip</b></p>-->
-<!--   <p>https://www.w3schools.com/lib/email.zip</p>-->
-<!--   <p class="w3-text-blue">Show in folder</p>-->
-<!-- </div>-->
-
-<!-- <div class="w3-panel w3-white w3-card w3-display-container">-->
-<!--   <span class="w3-display-topright w3-padding w3-hover-red">X</span>-->
-<!--   <p class="w3-text-blue"><b>email.zip</b></p>-->
-<!--   <p>https://www.w3schools.com/lib/email.zip</p>-->
-<!--   <p class="w3-text-blue">Show in folder</p>-->
-<!-- </div>-->
-<!--</div>-->
-
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Thanks for visiting! See you soon!</h1>
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
-    <a class="fa fa-facebook-official w3-hover-opacity" href="https://www.facebook.com"></a>
-    <a class="fa fa-instagram w3-hover-opacity" href="https://www.instagram.com"></a>
-    <a class="fa fa-snapchat w3-hover-opacity" href="https://www.snapchat.com"></a>
-    <a class="fa fa-pinterest-p w3-hover-opacity" href="https://www.pinterest.com"></a>
-    <a class="fa fa-twitter w3-hover-opacity" href="https://www.twitter.com"></a>
-    <a class="fa fa-linkedin w3-hover-opacity" href="https://www.linkedin.com/in/alekmilovanovic/"></a>
- </div>
-</footer>
-
-<script>
-function showHide() {
-  var x = document.getElementById("Demo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
-
+        $('.decrypt').click(function(){
+            console.log(encryptedData);
+            var password = $('#password').val();
+            // 'decrypt' tries to decrypt your string with the user provided password
+            var decrypted = CryptoJS.AES.decrypt(encryptedData, password);
+            document.write(decrypted.toString(CryptoJS.enc.Utf8));
+        });
+    </script>
 </body>
 </html>
